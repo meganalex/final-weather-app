@@ -1,3 +1,35 @@
-h1 {
-  color: red;
+header {
+  text-align: center;
+}
+header h1 {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 700;
+}
+header {
+  font-family: "Montserrat Alternates", sans-serif;
+}
+.container h1 {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 700;
+  font-size: xx-large;
+}
+.card {
+  padding: 15px;
+}
+
+#today {
+  width: 150px;
+  text-align: right;
+  padding-left: 50px;
+  padding-bottom: 50px;
+}
+.container {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-size: large;
+}
+.fiveweather {
+  width: 250px;
+}
+#card-title {
+  font-weight: bold;
 }

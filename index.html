@@ -4,19 +4,78 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="src/styles.css" />
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF"
       crossorigin="anonymous"
     />
-    <title>What's the Weather App</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <title>Weather App - What's the Weather</title>
   </head>
   <body>
-    <div class="main">
-      <h1>Hello World</h1>
-    </div>
+    <header>
+      <h1>What's the Weather?</h1>
+      <form id="search-form">
+        <label for="Name Here">Search Your Location</label>
+        <input type="search" id = "city-search" placeholder="Enter City Here" />
+        <input type="submit" value="Submit" />
+      </form>
+      <br/>
+      <button id="your">
+        Click Here for YOUR Location
+      </button>
+    </header>
+    <br />
+    <br />
+    <div class="container">
+            <div class="row">
+
+        <div class="col-6"> 
+      <h1 id=main-location>London, England</h1>
+      <br/>
+<div class="card" style="width: 30rem">
+            
+            <div id="card-body">
+              <h5 id="card-title"> <strong>Today</strong></h5>
+<p id=current-time> 13:48pm 
+              </p>
+              </p> <strong>The Weather Is...</strong>
+<p id="weather-info"> Partly Cloudy</p> 
+              <p id="main-card"> <strong id="temperature">
+               0</strong> <strong><span class="units"><a href="#" id="cel-link">°C</a> | <a href="#" id="far-link">°F</a></span></p>
+               </strong>
+               <img
+              id="today"
+              src="https://www.pngkit.com/png/full/122-1220676_partly-cloudy-comments-icon.png"
+              alt="partly cloudy graphic"
+            />
+            </div>
+            <div class="col-6">
+              <ul>
+                <li><strong>Humidity: </strong><span id="humidity"></span> %</li>
+                <li><strong>Wind: </strong><span id="wind"></span> m/h</li>
+              </ul>
+            </div>
+</div>
+
+<br/>
+    <a href="https://github.com/meganalex/SheCodeTest_1">M.Yawor GitHub Link</a>
 
     <script src="src/app.js"></script>
   </body>
