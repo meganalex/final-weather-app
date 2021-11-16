@@ -1,5 +1,6 @@
 header {
   text-align: center;
+  padding-top: 20px;
 }
 header h1 {
   font-family: "Montserrat Alternates", sans-serif;
@@ -32,4 +33,21 @@ header {
 }
 #card-title {
   font-weight: bold;
+}
+#five-tile {
+  padding-top: 7px;
+}
+#five-day {
+  text-align: center;
+}
+.five-temp-min {
+  color: gray;
+}
+.five-temp-max {
+  font-weight: 500;
+}
+
+#git {
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
