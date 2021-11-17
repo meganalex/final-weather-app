@@ -37,7 +37,7 @@ header {
 #five-tile {
   padding-top: 7px;
 }
-#five-day {
+.five-day {
   text-align: center;
 }
 .five-temp-min {
