@@ -44,21 +44,21 @@ lookUp.addEventListener("submit", search);
 ////
 
 function displayForecast() {
-  let forecastElement = document.querySelector("#forecast");
+  let fiveForecast = document.querySelector("#forecast");
 
-  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+  let dayNames = ["Thu", "Fri", "Sat", "Sun", "Mon"];
 
   let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
+  dayNames.forEach(function (days) {
     forecastHTML =
       forecastHTML +
       `
       <div class="col-2">
-        <div class="five-day-date">${day}</div>
+        <div class="five-day-date">${days}</div>
         <img
           src="http://openweathermap.org/img/wn/50d@2x.png"
-          alt=""
-          width="42"
+          alt="weather image description"
+          width="45"
         />
         <div class="five-temp">
           <span class="five-temp-max"> 18° </span>
@@ -69,7 +69,7 @@ function displayForecast() {
   });
 
   forecastHTML = forecastHTML + `</div>`;
-  forecastElement.innerHTML = forecastHTML;
+  fiveForecast.innerHTML = forecastHTML;
   console.log(forecastHTML);
 }
 
