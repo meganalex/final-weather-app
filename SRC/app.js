@@ -33,6 +33,11 @@ function search(event) {
   }
   let city = document.querySelector("#city-search").value;
   console.log(city);
+
+  searchCity(city);
+}
+
+function searchCity(city) {
   let apiKey = "3bc4c7ec3f401f2d634aee8e7ebb937d";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperature);
@@ -43,10 +48,11 @@ lookUp.addEventListener("submit", search);
 
 ////
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let fiveForecast = document.querySelector("#forecast");
 
-  let dayNames = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+  let dayNames = ["Mon", "Tues", "Weds", "Thurs", "Friday"];
 
   let forecastHTML = `<div class="row">`;
   dayNames.forEach(function (days) {
@@ -73,6 +79,14 @@ function displayForecast() {
   console.log(forecastHTML);
 }
 
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "3bc4c7ec3f401f2d634aee8e7ebb937d";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function showTemperature(response) {
   console.log(response.data.main.temp);
   let newTemp = document.querySelector("#temperature");
@@ -94,6 +108,8 @@ function showTemperature(response) {
   document.querySelector("#weather-info").innerHTML =
     response.data.weather[0].main;
   document.querySelector("#main-location").innerHTML = response.data.name;
+
+  getForecast(response.data.coord);
 }
 
 ////
@@ -135,5 +151,4 @@ farLink.addEventListener("click", showFarTemp);
 let celLink = document.querySelector("#cel-link");
 celLink.addEventListener("click", showCelTemp);
 
-search("London");
-displayForecast();
+searchCity("London");
