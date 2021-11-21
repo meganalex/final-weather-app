@@ -48,30 +48,47 @@ lookUp.addEventListener("submit", search);
 
 ////
 
+function dayNames(weekDate) {
+  let date = new Date(weekDate * 1000);
+  let day = date.getDay();
+  let days = ["Mon", "Tues", "Weds", "Thurs", "Fri", "Sat", "Sun"];
+
+  return days[day];
+}
+
 function displayForecast(response) {
   console.log(response.data.daily);
+  let weatherForecast = response.data.daily;
+
   let fiveForecast = document.querySelector("#forecast");
 
-  let dayNames = ["Mon", "Tues", "Weds", "Thurs", "Friday"];
-
   let forecastHTML = `<div class="row">`;
-  dayNames.forEach(function (days) {
-    forecastHTML =
-      forecastHTML +
-      `
+  weatherForecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
       <div class="col-2">
-        <div class="five-day-date">${days}</div>
+        <div class="five-day-date">${dayNames(forecastDay.dt)}</div>
+       
         <img
-          src="http://openweathermap.org/img/wn/50d@2x.png"
+          src="http://openweathermap.org/img/wn/${
+            forecastDay.weather[0].icon
+          }@2x.png"
           alt="weather image description"
           width="45"
         />
         <div class="five-temp">
-          <span class="five-temp-max"> 18° </span>
-          <span class="five-temp-min"> 12° </span>
+          <span class="five-temp-max"> ${Math.round(
+            forecastDay.temp.max
+          )}° </span>
+          <span class="five-temp-min"> ${Math.round(
+            forecastDay.temp.min
+          )}° </span>
         </div>
       </div>
   `;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
