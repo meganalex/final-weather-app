@@ -1,21 +1,39 @@
+body {
+  background-color: #6f6a95;
+}
 header {
-  text-align: center;
   padding-top: 20px;
+  padding-left: 40px;
 }
 header h1 {
   font-family: "Montserrat Alternates", sans-serif;
   font-weight: 700;
+  color: white;
 }
 header {
   font-family: "Montserrat Alternates", sans-serif;
+  color: white;
 }
+
+button {
+  background-color: #acaac2;
+  font-weight: 500;
+}
+
+#button {
+  background-color: #acaac2;
+  font-weight: 500;
+}
+
 .container h1 {
   font-family: "Montserrat Alternates", sans-serif;
   font-weight: 700;
   font-size: xx-large;
+  color: white;
 }
 .card {
   padding: 15px;
+  background-color: #acaac2;
 }
 
 #today {
@@ -41,7 +59,7 @@ header {
   text-align: center;
 }
 .five-temp-min {
-  color: gray;
+  color: #8682a6;
 }
 .five-temp-max {
   font-weight: 500;
@@ -50,4 +68,13 @@ header {
 #git {
   padding-top: 15px;
   padding-bottom: 15px;
+  color: black;
+}
+
+#cel-link {
+  color: black;
+}
+
+#far-link {
+  color: black;
 }
