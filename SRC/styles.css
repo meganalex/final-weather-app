@@ -21,8 +21,8 @@ header {
 #today {
   width: 150px;
   text-align: right;
-  padding-left: 50px;
-  padding-bottom: 50px;
+  padding-left: 15px;
+  padding-bottom: 15px;
 }
 .container {
   font-family: "Montserrat Alternates", sans-serif;
